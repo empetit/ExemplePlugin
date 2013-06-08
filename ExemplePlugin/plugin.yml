@@ -1,0 +1,7 @@
+name: Capture the sheep
+main: com.plugin.exemple
+version: 0.1
+commands:
+   exemple:
+      description: Informations sur le plugin.
+      usage: /<command>
