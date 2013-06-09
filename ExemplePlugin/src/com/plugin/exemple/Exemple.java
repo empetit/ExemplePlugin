@@ -18,7 +18,9 @@ public final class Exemple extends JavaPlugin {
 
 	private ExempleListenner listen = new ExempleListenner(this);
 	
-	private ExempleListenner secondListen = new ExempleListenner(this);
+	private ExempleSecondListenner secondListen = new ExempleSecondListenner(this);
+	
+	private ExempleTroisiemeListenner troisiemListen = new ExempleTroisiemeListenner(this);
 	
     File configFile;
     FileConfiguration config;
@@ -37,6 +39,7 @@ public final class Exemple extends JavaPlugin {
 		//2- ajout du listenner au pluginmanager
 		pm.registerEvents(this.listen,this);
 		pm.registerEvents(this.secondListen,this);
+		pm.registerEvents(this.troisiemListen,this);
 
 	    getLogger().info("Enregistrement des evenements");
 	    
@@ -44,8 +47,9 @@ public final class Exemple extends JavaPlugin {
 		// utile si on écrit ensemble des commandes on peut faire chacun un fichier
 		// /!\ la commande doit etre présente dans plugin.yml
 	    try {
-			getCommand("exemple").setExecutor(new ExempleCommandExecutor(this));
+			getCommand("exemple").setExecutor(new TroisiemeExempleCommandExecutor(this));
 			getCommand("getPet").setExecutor(new SecondExempleCommandExecutor(this));
+			getCommand("spawncow").setExecutor(new ExempleCommandExecutor(this));
 		} catch (Exception e) {
 			if(e instanceof NullPointerException){
 				Bukkit.getConsoleSender().sendMessage(ChatColor.YELLOW + "La commande n'as pas été chargée par elle n'est pas définie dans le plugin.yml");

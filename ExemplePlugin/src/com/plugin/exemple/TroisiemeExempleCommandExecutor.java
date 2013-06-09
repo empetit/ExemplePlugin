@@ -8,32 +8,30 @@ import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 
 @SuppressWarnings("unused")
-public class ExempleCommandExecutor implements CommandExecutor {
+public class TroisiemeExempleCommandExecutor implements CommandExecutor {
 
 	private Exemple plugin; // pointeur vers la classe principale
 	 
-	public ExempleCommandExecutor(Exemple plugin) {
+	public TroisiemeExempleCommandExecutor(Exemple plugin) {
 		this.plugin = plugin;
 	}
 	
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label,String[] args) {
-			
-		if(cmd.getName().equalsIgnoreCase("spawncow")){
+		
+		
+		if (cmd.getName().equalsIgnoreCase("exemple")){
 			if (sender instanceof Player) {
-				Player player = (Player) sender;
-				EntityType vache = EntityType.COW;
-				World monde = player.getWorld();
-	    		monde.spawnEntity(player.getLocation().add(2, 0, 0), EntityType.COW);
-			}
-			else{
-				sender.sendMessage("You must be a player!");
-				return false;
-			}
+		           Player player = (Player) sender;
+		           player.sendMessage("A que coucou");
+		        } else {
+		           sender.sendMessage("You must be a player!");
+		           return false;
+		        }
+		        // do something
+		        return false;
+		}else{
 			return false;
-		}
-		else{
-			return false;
-		}
+		}	
 	}
 }

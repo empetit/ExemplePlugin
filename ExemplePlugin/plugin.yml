@@ -8,3 +8,6 @@ commands:
    getPet:
       description: Donne un oeuf permettant de faire aparaitre un pet.
       usage: /<command>
+   spawncow:
+   	  description: Fais pop une vache sur nous.
+   	  usage: /<command>
