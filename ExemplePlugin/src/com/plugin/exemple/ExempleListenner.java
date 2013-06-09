@@ -8,9 +8,9 @@ import org.bukkit.event.player.PlayerJoinEvent;
  
 public class ExempleListenner implements Listener {
 	
-	public exemple plugin;
+	public Exemple plugin;
 	
-	public ExempleListenner(exemple pl){
+	public ExempleListenner(Exemple pl){
 		plugin = pl;
 	}
 	

@@ -1,5 +1,5 @@
-name: Capture the sheep
-main: com.plugin.exemple
+name: ExemplePlugin
+main: com.plugin.exemple.Exemple
 version: 0.1
 commands:
    exemple:
