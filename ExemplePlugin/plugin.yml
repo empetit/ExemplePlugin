@@ -5,3 +5,6 @@ commands:
    exemple:
       description: Informations sur le plugin.
       usage: /<command>
+   getPet:
+      description: Donne un oeuf permettant de faire aparaitre un pet.
+      usage: /<command>

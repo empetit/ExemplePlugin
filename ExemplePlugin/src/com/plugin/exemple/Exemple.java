@@ -45,6 +45,7 @@ public final class Exemple extends JavaPlugin {
 		// /!\ la commande doit etre présente dans plugin.yml
 	    try {
 			getCommand("exemple").setExecutor(new ExempleCommandExecutor(this));
+			getCommand("getPet").setExecutor(new SecondExempleCommandExecutor(this));
 		} catch (Exception e) {
 			if(e instanceof NullPointerException){
 				Bukkit.getConsoleSender().sendMessage(ChatColor.YELLOW + "La commande n'as pas été chargée par elle n'est pas définie dans le plugin.yml");
