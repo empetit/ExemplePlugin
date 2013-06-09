@@ -10,6 +10,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.inventory.meta.ItemMeta;
  
 public class ExempleListenner implements Listener {
 	
@@ -24,11 +25,14 @@ public class ExempleListenner implements Listener {
     	event.getPlayer().sendMessage(ChatColor.AQUA+ " Ce serveur utilise le plugin v"+ plugin.getDescription().getVersion());
     }
     
-    public void useDragonEgg(PlayerInteractEvent event){
+    @EventHandler
+    public void UtiliserOeufPet(PlayerInteractEvent event){
     	if ((event.getAction()==Action.RIGHT_CLICK_BLOCK) && (event.getPlayer().getItemInHand().getType() == Material.STICK)){
-    		World world = event.getPlayer().getWorld();
+    		World monde = event.getPlayer().getWorld();
     		EntityType vache = EntityType.COW;
-    		world.spawnEntity(event.getPlayer().getLocation(), vache);
+    		monde.spawnEntity(event.getPlayer().getLocation().add(2, 0, 0), vache);
+    	}
+    	else{
     	}
     }
 }
