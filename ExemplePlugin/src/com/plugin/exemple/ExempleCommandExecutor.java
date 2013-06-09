@@ -14,12 +14,7 @@ public class ExempleCommandExecutor implements CommandExecutor {
 		this.plugin = plugin;
 	}
 	
-	/**
-	 * @param sender Celui qui réalise la commande
-	 * @param cmd Objet Command
-	 * @param label le label de la commande
-	 * @param args les paramètres de la commande
-	 */
+	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label,String[] args) {
 		
 		if (cmd.getName().equalsIgnoreCase("exemple")){
