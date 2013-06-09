@@ -15,8 +15,10 @@ import org.bukkit.plugin.java.JavaPlugin;
 import com.sun.corba.se.impl.activation.CommandHandler;
 
 public final class Exemple extends JavaPlugin {
-	
+
 	private ExempleListenner listen = new ExempleListenner(this);
+	
+	private ExempleListenner secondListen = new ExempleListenner(this);
 	
     File configFile;
     FileConfiguration config;
@@ -34,6 +36,7 @@ public final class Exemple extends JavaPlugin {
 		PluginManager pm = getServer().getPluginManager();
 		//2- ajout du listenner au pluginmanager
 		pm.registerEvents(this.listen,this);
+		pm.registerEvents(this.secondListen,this);
 
 	    getLogger().info("Enregistrement des evenements");
 	    
