@@ -24,7 +24,7 @@ public class ExempleCommandExecutor implements CommandExecutor {
 				Player player = (Player) sender;
 				EntityType vache = EntityType.COW;
 				World monde = player.getWorld();
-	    		monde.spawnEntity(player.getLocation().add(2, 0, 0), EntityType.COW);
+	    		monde.spawnEntity(player.getLocation().add(2, 0, 0), vache);
 			}
 			else{
 				sender.sendMessage("You must be a player!");
